@@ -22,14 +22,14 @@ module.exports = {
         return `${host}${APINAME}`;
     },
     api: {
-        sdporganization: '/sdporganization'
+        organization: '/organization'
     },
     headers: {
         'Content-Type': 'application/json; charset=utf-8'
     },
-    dev: 'https://jdy-sdp.corp.qihoo.net/api/v1',
+    dev: 'http://localhost:3333',
     // 生产环境
-    pro: 'https://jdy-sdp.corp.qihoo.net/api/v1',
+    pro: 'http://xxx',
     host: /localhost/,
     serializeObject () {
         var arrayData, objectData;
