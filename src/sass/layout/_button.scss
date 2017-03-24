@@ -1,0 +1,114 @@
+.btn-group,
+.btn-group-vertical {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  vertical-align: middle; // match .btn alignment given font-size hack above
+  line-height: $default-font-size;
+  z-index: 8;
+
+  > .btn {
+    position: relative;
+    float: left;
+    // Bring the "active" button to the front
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      z-index: 2;
+    }
+    &:focus {
+      // Remove focus outline when dropdown JS adds it after closing the menu
+      outline: none;
+    }
+  }
+
+  &.hide {
+    display: none;
+  }
+}
+
+.btn-group-vertical {
+  flex-direction: column;
+
+  .btn + .btn {
+    margin-top: 10px;
+  }
+}
+
+// Prevent double borders when buttons are next to each other
+.btn-group {
+  .btn + .btn,
+  .btn + .btn-group,
+  .btn-group + .btn,
+  .btn-group + .btn-group {
+    margin-left: 10px;
+  }
+}
+
+.btn {
+  padding: 8px 10px;
+  color: $gray;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 3px;
+  background: darken($head-background, 20%);
+  @include box-shadow(inset 1px 1px 1px rgba(0,0,0,.075), 1px 1px 1px darken(#ccc, 20%));
+
+  &.disabled {
+    cursor: not-allowed;
+    background-color: $input-bg-disabled;
+    border: 1px solid #ccc;
+    box-shadow: none;
+    color: #bbb;
+
+    &:hover {
+      color: #bbb;
+      box-shadow: none;
+    }
+  }
+
+  &:hover {
+    background: $head-background;
+    @include box-shadow(inset 1px 1px 1px rgba(0,0,0,.175), 1px 1px 1px darken(#ccc, 20%));
+  }
+}
+
+.btn-primary {
+  //background-color: $green;
+  //color: $white;
+  //
+  //&:hover {
+  //  color: $gray;
+  //}
+}
+
+.btn-secondary {
+  //background-color: $orange;
+  //color: #fff;
+  //
+  //&:hover {
+  //  color: $lightGray;
+  //}
+}
+
+.btn-deny {
+  //background-color: $red;
+  //color: $white;
+  //
+  //&:hover {
+  //  color: $gray;
+  //}
+}
+
+.btn-info {
+  cursor: auto;
+  background: transparent;
+  box-shadow: none;
+
+  &:hover {
+    color: $gray;
+    background: transparent;
+    box-shadow: none;
+  }
+}

@@ -1,0 +1,288 @@
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+legend {
+  display: block;
+  width: 100%;
+  padding: 0;
+  font-size: $font-size-base;
+  line-height: inherit;
+  color: #000;
+  border-bottom: 1px #ccc dashed;
+  margin-bottom: 25px;
+}
+
+legend + .form-group {
+  margin-top: 0;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 5px;
+  width: 150px;
+  text-align: right;
+}
+
+
+// Normalize form controls
+
+
+// Common form controls
+//
+// Shared size and type resets for form controls. Apply `.form-control` to any
+// of the following form controls:
+//
+// select
+// textarea
+// input[type="text"]
+// input[type="password"]
+// input[type="datetime"]
+// input[type="datetime-local"]
+// input[type="date"]
+// input[type="month"]
+// input[type="time"]
+// input[type="week"]
+// input[type="number"]
+// input[type="email"]
+// input[type="url"]
+// input[type="search"]
+// input[type="tel"]
+// input[type="color"]
+
+.form-control {
+  width: 270px;
+  height: $input-height-base; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
+  padding: $padding-base-vertical $padding-base-horizontal;
+  font-size: $default-font-size;
+  line-height: $line-height-base;
+  color: $text-primary;
+  vertical-align: middle;
+  background-color: $input-bg;
+  border: 1px solid $input-border;
+  border-radius: $input-border-radius;
+
+  // Customize the `:focus` state to imitate native WebKit styles.
+  @include form-control-focus();
+
+  // Disabled and read-only inputs
+  // Note: HTML5 says that controls under a fieldset > legend:first-child won't
+  // be disabled if the fieldset is disabled. Due to implementation difficulty,
+  // we don't honor that edge case; we style them as disabled anyway.
+  &[disabled],
+  &[readonly],
+  fieldset[disabled] & {
+    cursor: not-allowed;
+    background-color: $input-bg-disabled;
+  }
+}
+
+// Override content-box in Normalize (* isn't specific enough)
+input[type="search"] {
+  @include box-sizing(border-box);
+}
+
+// Position radios and checkboxes better
+input[type="radio"],
+input[type="checkbox"] {
+//  margin: 4px 0 0;
+//  margin-top: 1px \9; /* IE8-9 */
+  line-height: normal;
+}
+
+// Set the height of select and file controls to match text inputs
+input[type="file"] {
+  display: block;
+}
+
+// Make multiple select elements height not fixed
+select[multiple],
+select[size] {
+  height: auto;
+}
+
+// Fix optgroup Firefox bug per https://github.com/twbs/bootstrap/issues/7611
+select optgroup {
+  font-size: inherit;
+  font-style: inherit;
+  font-family: inherit;
+}
+
+// Focus for select, file, radio, and checkbox
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+  @include tab-focus();
+}
+
+// Fix for Chrome number input
+// Setting certain font-sizes causes the `I` bar to appear on hover of the bottom increment button.
+// See https://github.com/twbs/bootstrap/issues/8350 for more.
+input[type="number"] {
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    height: auto;
+  }
+}
+
+
+// Placeholder
+//
+// Placeholder text gets special styles because when browsers invalidate entire
+// lines if it doesn't understand a selector/
+.form-control {
+  @include placeholder();
+}
+
+
+// Reset height for `textarea`s
+textarea.form-control {
+  height: auto;
+}
+
+textarea {
+  font-family: $font-primary;
+}
+// Form groups
+//
+// Designed to help with the organization and spacing of vertical forms. For
+// horizontal forms, use the predefined grid classes.
+
+.form-group {
+  margin: 25px 0;
+  position: relative;
+
+  label {
+    font-size: $font-size-base;
+    width: 120px;
+  }
+
+  .half-line {
+    width: 49%;
+    display: inline-block;
+  }
+
+  .y_text,
+  .n_text {
+    color: $apple;
+    width: 350px;
+    margin-left: 5px;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+
+    b {
+      font-weight: 100;
+    }
+
+    .info {
+      color: $text-primary;
+      padding-left: 36px;
+    }
+  }
+
+  .n_text {
+    display: none;
+    padding-left: 150px;
+    color: $red;
+  }
+
+  .tip {
+    display: none;
+    width: 18px;
+    height: 15px;
+    vertical-align: -3px;
+    *vertical-align: 0px;
+    zoom: 1;
+  }
+}
+
+.has-error {
+  .form-error {
+    width: 350px;
+    display: inline-block;
+    margin-top: 5px;
+    padding-left: 150px;
+    color: $red;
+  }
+   .form-error1{
+    color: $green;
+    padding-left: 10px;
+    text-align: left;
+  }
+  .form-error2{
+    color: $red;
+    padding-left: 10px;
+    text-align: left;
+    margin-bottom: 6px;
+  }
+}
+
+// Checkboxes and radios
+//
+// Indent the labels to position radios/checkboxes as hanging controls.
+
+.radio,
+.checkbox {
+  display: block;
+  min-height: $line-height-computed; // clear the floating input if there is no label text
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  vertical-align: middle;
+  label {
+    display: inline;
+    margin-bottom: 0;
+    font-weight: normal;
+    cursor: pointer;
+  }
+}
+.radio input[type="radio"],
+.radio-inline input[type="radio"],
+.checkbox input[type="checkbox"],
+.checkbox-inline input[type="checkbox"] {
+  float: left;
+  margin-left: -20px;
+}
+.radio + .radio,
+.checkbox + .checkbox {
+  margin-top: -5px; // Move up sibling radios or checkboxes for tighter spacing
+}
+
+// Radios and checkboxes on same line
+.radio-inline,
+.checkbox-inline {
+  display: inline-block;
+  padding-left: 20px;
+  margin-bottom: 0;
+  vertical-align: middle;
+  font-weight: normal;
+  cursor: pointer;
+}
+.radio-inline + .radio-inline,
+.checkbox-inline + .checkbox-inline {
+  margin-top: 0;
+  margin-left: 10px; // space out consecutive inline controls
+}
+
+// Apply same disabled cursor tweak as for inputs
+//
+// Note: Neither radios nor checkboxes can be readonly.
+input[type="radio"],
+input[type="checkbox"],
+.radio,
+.radio-inline,
+.checkbox,
+.checkbox-inline {
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: not-allowed;
+  }
+}
+
+select.form-control {
+  width: 282px;
+  height: 30px;
+}

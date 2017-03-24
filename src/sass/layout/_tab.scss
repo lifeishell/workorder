@@ -1,0 +1,85 @@
+/**tab**/
+.mod-tab {
+  position: relative;
+  height: 61px;
+  margin-top: 10px;
+  z-index: 20;
+
+  ul {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    // Prevent double borders when li are next to each other
+    li + li {
+      margin-left: -1px;
+    }
+
+    li {
+      float: left;
+      background: #fff;
+      width: 120px;
+      height: 56px;
+      line-height: 56px;
+      text-align: center;
+      color: #7c7c7c;
+      border-left: 1px solid #b3b3b3;
+      border-right: 1px solid #b3b3b3;
+      border-top: 5px solid #b3b3b3;
+      cursor: pointer;
+
+      a {
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+        color: $text-primary;
+      }
+
+      &>span {
+        display: inline-block;
+        padding-left: 36px;
+      }
+
+      &.do span {
+        background-position:-180px -424px;
+      }
+
+      &.done span {
+        background-position:-180px -346px;
+      }
+
+      &.on {
+        height: 57px;
+        line-height: 56px;
+        border-top: 5px solid $red;
+        border-bottom: none;
+        color: $red;
+        background: linear-gradient(#fff, #efefef);;
+
+        span {
+          color: $red;
+          background-position-x:0;
+        }
+
+        a {
+          color: $red;
+        }
+      }
+    }
+  }
+
+  &.sub-tab {
+    height: 41px;
+
+    li {
+      width: 101px;
+      height: 36px;
+      line-height: 36px;
+
+      &.on {
+        height: 37px;
+        line-height: 37px;
+      }
+    }
+  }
+}

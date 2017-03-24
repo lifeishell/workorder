@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+$acl-font-path: '../../assets/fonts';
+$img-path:  '../../assets/images';
+
+// Constants
+$E:     2.718281828459045;
+$PI:    3.141592653589793;
+$LN2:   0.6931471805599453;
+$SQRT2: 1.4142135623730951;
+
+$brand-primary: #285064 !default;
+$background-primary: #f0f3f6 !default;
+$color-primary: #8ec14f !default;
+/* Secondary color is by default mostly used as background color */
+$color-secondary: #f0f3f6 !default;
+$color-selected: #59b3e6 !default;
+$color-link: #3b8acc !default;
+$color-list-hover: #FAEBD7 !default;
+$path-background: #fff; //#edf8ff;
+$head-background: #efefef;
+$list-head-background: #c3dce8;
+
+$orange: #ff9933 !default;
+$apple: #999999 !default;
+$green: #77bd3d !default;
+$red: #ea7567 !default;
+$blue: blue !default;
+$white: #ffffff !default;
+$yellow: #FFD700 !default;
+$gray: #333333 !default;
+$darkGray: #494949 !default;
+$lightGray: #e8e8e8 !default;
+$coffee: #6C6C6C !default;
+
+$light-bluish-green: #079083 !default;
+
+$text-primary: $darkGray !default;
+
+$line-height-computed: 30px;
+$input-bg-disabled: #efefef !default;
+$padding-base-vertical: 5px !default;
+$padding-base-horizontal: 5px !default;
+$font-size-base: 14px;
+$input-height-base: 20px;
+$line-height-base: 20px;
+$input-bg: #fff;
+$input-border: $lightGray;
+$input-border-radius: 1px;
+
+$input-color-placeholder: #666666;
+$input-border-focus: $color-primary;
+
+$font-primary: arial, '微软雅黑', sans-serif !default;
+$default-font-size: 12px;
+$default-border-color: #999999;
+
+$font-size-title: 28px;

@@ -1,0 +1,85 @@
+.bold {
+  font-weight: bold;
+}
+.warning {
+  color: $orange;
+}
+.critical {
+  color: $red;
+}
+.fine {
+  color : $green;
+}
+.low-risk {
+  color: $yellow;
+}
+.text-primary { color: $text-primary !important; }
+.text-gray { color: $gray !important;}
+.text-white { color: #fff !important; }
+.text-warning { @extend .warning; }
+.text-alarm { @extend .critical; }
+.text-info { color: $color-link; }
+.text-inactive { color: #A0A0A0; }
+.text-green { @extend .fine; }
+.capitalize { text-transform: capitalize; }
+.uppercase { text-transform: uppercase; }
+
+// Font Size
+.text-xxl			{ font-size: 170% } //24px
+.text-xl			{ font-size: 140%; } //20px
+.text-lg			{ font-size: 120%; } //17px
+.text-md			{ font-size: 110%; } //15px
+.text-sm			{ font-size: 85%; } //13px
+
+.text-left {
+  text-align: left;
+  padding-left: 15px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.lighten {
+  opacity: .8;
+  font-weight: 100;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+strong, b{
+  color: $text-primary;
+}
+
+.link {
+  color: $color-link;
+  cursor: pointer;
+
+  &:hover {
+    color: $color-selected;
+  }
+}
+
+.wd-break{
+  word-break: break-all;
+  word-wrap: break-word;
+}
+.text-format{
+  text-align: center;
+}
+.text-format > p{
+  display:inline-block;
+  text-align: left;
+}
+.vt-middle{
+  vertical-align: middle;
+}
+
+
+.shortcut {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

@@ -1,0 +1,86 @@
+/*****search****/
+.mod-search {
+  position: absolute;
+  right: 0;
+  top: 15px;
+  z-index: 30;
+
+  li {
+    @extend .bold;
+
+    float: left;
+    padding-left: 6px;
+    height: 28px;
+    line-height: 28px;
+    color: $brand-primary;
+
+    select {
+      width: 120px;
+    }
+  }
+
+  label {
+    @extend .bold;
+
+    font-size: $default-font-size;
+    padding-left: 8px;
+    height: 28px;
+    line-height: 30px;
+    color: $brand-primary;
+  }
+
+  .btn {
+    color: #fff;
+    background: $brand-primary;
+
+    &:hover {
+      background: lighten($brand-primary, 15%);
+    }
+  }
+
+  input {
+    width: 120px;
+
+    &.Wdate{
+      cursor: pointer;
+    }
+  }
+
+  .add-new {
+    color: #fff;
+    margin-left: 6px;
+    background: $color-link;
+    border-radius: 5px;
+    padding-right: 10px;
+    cursor: pointer;
+    z-index: 40;
+    font-size: 14px;
+  }
+
+  .search-area {
+    position: relative;
+
+    .fa-search, .fa-bars {
+      font-size: 14px;
+      position: absolute;
+      right: 10px;
+      top: 0;
+    }
+  }
+
+  .search-field {
+    position: absolute;
+    width: 170px;
+    max-height: 600px;
+    background: #fff;
+    padding: 0 5px;
+    border: 1px solid #ccc;
+    border-top: none;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    .acl-table + .acl-table {
+      border-top: 1px dashed #ccc;
+    }
+  }
+}

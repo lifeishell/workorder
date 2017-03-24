@@ -1,0 +1,184 @@
+li {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+.mod-table {
+  text-align: center;
+  position: relative;
+
+  table {
+    width: 100%;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #b3b3b3;
+    /*url(http://p0.qhimg.com/t0172c22a4a1cc27963.png) 0 0 repeat-x*/
+
+    .clickable {
+      @extend a;
+    }
+
+    th {
+      background: #EBEEED;
+      text-align: center;
+      height: 46px;
+      padding: 0 15px;
+      white-space: nowrap;
+    }
+
+    th + th {
+      background:#EBEEED 0 -84px no-repeat;
+    }
+
+    tr {
+      display: table-row;
+
+      &.hov {
+        background: #FAEBD7;
+      }
+
+      &.on {
+        background: lighten($yellow, 30%);
+      }
+
+      &.hide {
+        display: none;
+      }
+    }
+
+    tbody tr td {
+      /*background: #fff;*/
+      vertical-align: middle;
+      padding:10px 5px;
+      height: 37px;
+      border-top: 1px solid #b3b3b3;
+    }
+
+    tbody tr td span {
+      /*white-space: pre-wrap;*/
+      text-align: left;
+      display: inline-block;
+    }
+
+    tbody tr td .hurry {
+      padding: 2px 4px;
+      background: #f19737;
+      color: #fff;
+      border-radius: 2px;
+      text-align: center;
+    }
+
+
+    tbody tr td .forward {
+      padding: 2px 4px;
+      color: #fff;
+      background: $color-link;
+      border-radius: 2px;
+      cursor: pointer;
+
+      &:hover {
+        background: $color-selected;
+      }
+    }
+
+    tbody tr td .public {
+       padding: 2px 4px;
+       color: #fff;
+       background: $green;
+       border-radius: 2px;
+     }
+
+    td a {
+      cursor: pointer;
+    }
+
+    .tangle {
+      cursor: pointer;
+
+      span {
+        padding-right: 15px;
+
+        &.dwn {
+          background-position: right -39px;
+        }
+
+        &.up {
+          background-position: right 6px;
+        }
+      }
+    }
+
+    .state {
+      span {
+        text-align: left;
+        border: 1px solid #c7c7c7;
+        color: #6b6b6b;
+        padding: 0 5px;
+        background: #ebeff2;
+        height: 27px;
+        margin: 5px;
+        line-height: 27px;
+        display: inline-block;
+        position: relative;
+
+        > i {
+          margin-right: 5px;
+        }
+
+        b {
+          position: absolute;
+            top: 0;
+            right: 2px;
+          text-align: center;
+          width: 20px;
+          height: 20px;
+        }
+
+        &.p {
+          color: darken($green, .7);
+          background: #e0ffdc;
+          border: 1px solid $green;
+        }
+
+        &.r {
+          border: 1px solid $red;
+          background: #ffe3dc;
+          color: darken($red, .7);
+        }
+      }
+    }
+  }
+}
+
+
+$columns: 24;
+$column-size: 4.166%;
+
+@mixin col-x {
+  @for $i from 1 through $columns {
+    .col-#{$i} {
+      width: $column-size * $i;
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      padding: 5px 4px;
+      flex-grow: 1;
+    }
+  }
+}
+
+.acl-table {
+  @include col-x;
+  width: 100%;
+  display: flex;
+
+  .date-pick {
+    justify-content: center;
+    .form-control {
+      box-sizing: content-box;
+    }
+  }
+}

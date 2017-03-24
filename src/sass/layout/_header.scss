@@ -1,0 +1,124 @@
+/***admin header*/
+.head-wrapper {
+  height: 84px;
+  width: 100%;
+  min-width: 1295px;
+  background: $brand-primary;
+}
+
+.acl_logo {
+  float: left;
+  color: $white;
+  width: 315px;
+  height: 65px;
+  margin-top: 20px;
+  background: url(#{$img_path}/logo.png) 0 -25px no-repeat;
+}
+
+.head {
+  margin: 0 2%;
+  line-height: 69px;
+
+  .nav {
+    float: right;
+    position: relative;
+  }
+
+  .nav ul,
+  .user-status .user-item ul {
+    display: inline;
+  }
+
+  .nav li {
+    float: left;
+    width: 102px;
+    height: 84px;
+  }
+
+  .nav li.active {
+    background: darken($brand-primary, 10%);
+    @include box-shadow(inset 3px 3px 3px rgba(0,0,0,.075), 0 0 1px $brand-primary);
+
+  }
+
+  .nav li a {
+    font-size: $font-size-base;
+    color: #fff;
+    padding-top: 49px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    display: block;
+    text-decoration: none;
+  }
+
+  .user-status {
+    float: right;
+    color: #fff;
+    margin: 15px 0;
+    border-left: 1px solid #ccc;
+  }
+
+  .user-status .user-item ul li {
+    float: left;
+    padding-left: 20px;
+    height: 55px;
+    line-height: 55px;
+    color: #fff;
+  }
+
+  .user-status .user-item ul li a {
+    color: #fff;
+  }
+
+  .user-status .logout {
+    cursor: pointer;
+  }
+}
+
+/**nav 用户设置**/
+.nav-user-setting {
+  background: #285064;
+  color: #fff;
+  border: 1px #9D9D9D solid;
+  /* box-shadow: 0 0px 1px #444; */
+  width: 80px;
+  line-height: 1.5;
+  padding: 2px;
+  position: absolute;
+  z-index: 102;
+}
+.nav-user-setting .g-point-top .bg{
+  border-color: transparent transparent #285064;
+}
+.nav-user-setting .bd{
+  border-top: 0;
+  overflow: hidden;
+}
+.nav-user-setting a,
+.nav-user-setting span{
+  color: #fff;
+  height: 32px;
+  line-height: 32px;
+  margin: 0 5px;
+  padding-left: 10px;
+  display: block;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+}
+.nav-user-setting li:hover{
+  background: #053B55;
+}
+.nav-user-setting a:hover,
+.nav-user-setting span:hover{
+  color: #59B3E6;
+  background: #053B55;
+}
+.nav-user-setting .g-point {
+  height: 6px;
+  width: 6px;
+  left: 33px;
+  position: absolute;
+  top: -13px;
+}

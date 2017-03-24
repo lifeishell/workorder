@@ -1,0 +1,97 @@
+/* CSS Document */
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background: $background-primary;
+  overflow-x: auto;
+  overflow-y: scroll;
+  *overflow-y: auto;
+  height: 100%;
+  font-size: $default-font-size;
+  font-family: $font-primary;
+
+  &:not(i) {
+    font-family: $font-primary;
+    font-weight: 100;
+    font-size: $default-font-size;
+    color: $text-primary;
+  }
+
+  h4, h3, th {
+    * &:not(i) {
+      font-weight: 100;
+      font-size: $font-size-base;
+    }
+  }
+
+  a {
+    color: $color-link;
+    cursor: pointer;
+    text-decoration:none;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: $color-selected;
+      text-decoration: none;
+    }
+  }
+}
+
+/* 清除浮动 */
+.clearfix:after {
+  display: block;
+  clear: both;
+  height: 0;
+  content: ' ';
+  visibility: hidden;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+.clear {
+  clear: both;
+}
+
+.updateBoswer {
+  height: 100%;
+  text-align: center;
+  font-size: $font-size-base;
+  p {
+    padding-top:100px;
+
+    img {
+      display: block;
+      margin: 10px auto;
+      border: none;
+    }
+  }
+}
+
+.tips {
+  text-decoration: underline;
+}
+
+.clickable {
+  @extend a;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.hide {
+  display: none;
+}
+
+

@@ -1,0 +1,238 @@
+.acl-collapse-list {
+  margin: 0 0 5px 0;
+
+  .js-close {
+    display: none;
+    position: absolute;
+      left: 0px;
+      top: 1px;
+  }
+
+  &.open > {
+    .acl-collapse-list--content > .acl-collapse-list {
+      display: block;
+    }
+
+    .acl-collapse-list--content {
+      display: block
+    }
+
+    .acl-collapse-list--head .js-close {
+      display: inline-block;
+    }
+  }
+
+  .acl-collapse-list--content {
+    display: none;
+  }
+
+  .acl-collapse-list {
+
+    > .acl-collapse-list--head {
+      background: darken($head-background, 10%);
+    }
+
+    .acl-collapse-list {
+
+      > .acl-collapse-list--head {
+        background: darken($head-background, 10%);
+      }
+    }
+  }
+}
+
+.acl-collapse-leaf {
+  padding-bottom: 5px;
+
+  .js-close {
+    display: none;
+    position: absolute;
+    left: 0px;
+    top: 1px;
+  }
+
+  .acl-collapse-list--head {
+    position: relative;
+    background: darken($head-background, 10%);
+    padding: 0 10px 0 10px;
+    border-left: none;
+    color: $text-primary;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.acl-collapse-list--head {
+  cursor: pointer;
+  padding: 2px 10px;
+  line-height: 30px;
+  height: 30px;
+  border-left: 5px solid darken($head-background, 55%); //$orange;
+  background: darken($head-background, 10%);
+  color: $text-primary;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+
+  .acl-collapse-list.open > & {
+    border-left: 0;
+    padding-left: 20px;
+  }
+
+  .btn-group {
+    justify-content: flex-end;
+  }
+
+  .name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex-shrink: 20;
+  }
+}
+
+.acl-collapse-list--content {
+  margin: 5px 0 0 15px;
+}
+
+
+.acl-list {
+  width: 100%;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+
+  &.collapse {
+    .acl-list__content {
+      display: none;
+
+      &.open {
+        display: block;
+      }
+    }
+  }
+}
+
+.acl-list + .acl-list {
+  border-bottom: 1px solid #b3b3b3;
+}
+
+.acl-list__header {
+  width: 100%;
+  border-bottom: 1px solid #b3b3b3;
+
+  div, li {
+    background: $head-background;
+    height: 37px;
+    white-space: nowrap;
+    text-align: center;
+  }
+}
+
+.acl-list__content + .acl-list__content {
+  border-top: 1px solid #b3b3b3;
+}
+
+.acl-list__content {
+  position: relative;
+
+  &.editing {
+    border-top: none;
+  }
+
+  .acl-list {
+    border-top: none;
+    border-bottom: none;
+  }
+
+  .acl-list__content {
+    min-height: 30px;
+  }
+
+  .hurry {
+    color: #fff;
+    background: $orange;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    margin: 0 auto;
+    border-radius: 3px;
+  }
+
+  .forward {
+    color: #fff;
+    background: $color-link;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    margin: 0 auto;
+    border-radius: 3px;
+    cursor: pointer;
+
+    &:hover {
+      background: $color-selected;
+    }
+  }
+
+  .left {
+     text-align: left;
+  }
+
+  .state {
+
+    span {
+      color: #6b6b6b;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+
+      > i {
+        margin-right: 5px;
+      }
+
+      b {
+        position: absolute;
+          top: 0;
+          right: 2px;
+        text-align: center;
+        width: 20px;
+        height: 20px;
+      }
+
+      &.p {
+        color: darken($green, .7);
+      }
+
+      &.r {
+        color: darken($red, .7);
+      }
+    }
+  }
+
+  .actions {
+    .btn-group {
+      justify-content: center;
+    }
+  }
+
+  .full,
+  &.open .short {
+    display: none;
+  }
+  .short,
+  &.open .full {
+    text-align: center;
+  }
+
+  &.active {
+    background: lighten($yellow, 30%);
+  }
+
+  .note {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 200px;
+  }
+}

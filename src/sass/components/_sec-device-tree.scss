@@ -1,0 +1,152 @@
+.device-tree {
+  position: relative;
+  width: 50%;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  margin-right: 5px;
+  background: #fff;
+  padding: 10px 10px 50px 10px;
+  max-height: 800px;
+  @include box-shadow(inset 1px 0px 0px rgba(0,0,0,.075), 0 0 1px #ccc);
+
+  &.shrink {
+    width: 10px;
+    overflow: hidden;
+
+    .filter-type {
+      display: none;
+    }
+
+    .device-tree__search {
+      display: none;
+    }
+
+    .device-tree__content {
+      display: none;
+    }
+
+    i.fa-icon:before {
+      content: "\f101"
+    }
+  }
+
+  .device-tree-scroll-wrap {
+    position: relative;
+    min-height: 570px;
+    flex-grow: 1;
+  }
+
+  .device-tree__content {
+    overflow-y: auto;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+
+  i {
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+
+    font-size: 16px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 66;
+
+    &:hover {
+      color: $color-selected;
+    }
+
+    &.fa-icon {
+      &:before {
+        content: "\f100";
+      }
+    }
+  }
+
+  .device-tree__search {
+    position: relative;
+    flex-shrink: 0;
+    margin-bottom: 5px;
+
+    .form-control {
+      width: 95%;
+    }
+
+    i {
+      position: absolute;
+      right: 15px;
+      bottom: 10px;
+      font-size: 14px;
+    }
+
+    .device-tree__search--result {
+      border: 1px solid #ccc;
+      width: 100%;
+      z-index: 100;
+      max-height: 600px;
+      overflow-x: hidden;
+      overflow-y: auto;
+      position: absolute;
+      top: 35px;
+      left: 0;
+
+      li {
+        position: relative;
+        background: #fff;
+        height: 30px;
+        line-height: 30px;
+        padding-left: 30px;
+        cursor: pointer;
+        overflow: hidden;
+
+        &:nth-child(2n){
+          background: #efefef;
+        }
+
+        &:hover, &.focus {
+          color: #fff;
+          background: $color-selected;
+        }
+
+        i {
+          left: 0;
+        }
+      }
+    }
+  }
+
+  .filter-type {
+    margin-bottom: 5px;
+    flex-shrink: 0;
+
+    span {
+      display: inline-block;
+      text-align: center;
+      line-height: 22px;
+      height: 22px;
+      width: 50px;
+      cursor: pointer;
+      color: $color-link;
+
+      &:hover {
+        color: $color-selected;
+      }
+
+      &.on {
+        color: #fff;
+        border: 2px solid $color-selected;
+        background: $color-selected;
+        border-radius: 3px;
+      }
+    }
+  }
+
+  .acl-collapse-list--head.highlight {
+    background: lighten($yellow, 30%);
+  }
+}
